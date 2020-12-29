@@ -46,7 +46,7 @@ export class UserService {
   login(formData) {
     return this.http.post(this.BaseURI + '/Authentication/Login', formData);
   }
-
+  /*
   roleMatch(allowedRoles): boolean {
     var isMatch = false;
     var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
@@ -59,7 +59,7 @@ export class UserService {
     });
     return isMatch;
   }
-
+  */
 
 
 }

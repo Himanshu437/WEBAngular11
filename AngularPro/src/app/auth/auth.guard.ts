@@ -15,15 +15,18 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     if (localStorage.getItem('token') != null) {
-      let roles = next.data['permittedRoles'] as Array<string>;
-      if (roles) {
-        if (this.service.roleMatch(roles)) return true;
+      let roles = localStorage.getItem('role')
+      if (roles == "Admin") {
+        this.router.navigate(['/adminpanel']);
+        return true;
+      }
+       // if (this.service.roleMatch(roles)) return true;
         else {
           this.router.navigate(['/forbidden']);
           return false;
         }
-      }
-      return true;
+      
+     
     }
     else {
       this.router.navigate(['/user/login']);

@@ -15,6 +15,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { UserService } from './shared/user.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { LoginAdminComponent } from './user/login-admin/login-admin.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     LoginComponent,
     HomeComponent,
     AdminPanelComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    LoginAdminComponent
   ],
   imports: [
     BrowserModule,
